@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! The SmartSwitch half: the NPU's view of its DPUs.
 //!
 //! Ports `chassisd:SmartSwitchModuleUpdater`.  A DPU is a module like a line

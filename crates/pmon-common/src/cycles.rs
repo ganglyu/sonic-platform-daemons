@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! What ends a daemon's cycle: the next tick, or a signal.
 //!
 //! Every daemon here is the same shape -- wait, do a pass, repeat until told to

@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! STATE_DB field formatters matching Python's `str()` semantics.
 //!
 //! Every TEMPERATURE_INFO and FAN_INFO field that thermalctld writes goes

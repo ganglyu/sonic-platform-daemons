@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! chassisd, in Rust.  Ports `sonic-chassisd/scripts/chassisd`.
 //!
 //! Two machines share this daemon and very little else.  On a **modular
