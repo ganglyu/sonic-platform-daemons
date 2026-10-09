@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! Which DPUs are on their way off the bus.
 //!
 //! Ports `pcied:DaemonPcied.is_dpu_in_detaching_mode`.  A SmartSwitch detaches

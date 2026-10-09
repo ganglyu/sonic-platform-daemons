@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! pcied, in Rust.  Ports `sonic-pcied/scripts/pcied`.
 //!
 //! Once a minute, check the machine against the parts list in its `pcie.yaml`
