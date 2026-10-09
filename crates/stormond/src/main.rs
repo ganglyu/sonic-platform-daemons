@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! stormond, in Rust.  Ports `sonic-stormond/scripts/stormond`.
 //!
 //! STORAGE_INFO once an hour: each disk's model, firmware, health, temperature,

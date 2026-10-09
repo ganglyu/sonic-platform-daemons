@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! Lifetime filesystem read/write counters, across restarts.
 //!
 //! Ports `stormond:DaemonStorage._load_fsio_rw_json`,

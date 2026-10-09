@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! What every pmon daemon needs and none of them should own a copy of.
 //!
 //! Every daemon in this workspace opens STATE_DB tables, logs to syslog under

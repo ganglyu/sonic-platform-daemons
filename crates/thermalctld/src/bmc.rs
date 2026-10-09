@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! The two halves of the Switch-BMC path.  Ports the host half,
 //! `thermalctld:TemperatureUpdater._init_bmc_temperature_table`,
 //! `thermalctld:TemperatureUpdater._bmc_table_set` and

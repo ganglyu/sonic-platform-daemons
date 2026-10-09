@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! A STATE_DB table, behind a trait so the write path can be tested.
 //!
 //! The Python daemons test the same way: `tests/mock_swsscommon.py` shadows the
