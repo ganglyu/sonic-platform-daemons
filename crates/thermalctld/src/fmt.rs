@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! The two STATE_DB formatters that are this daemon's own.
 //!
 //! Everything else -- Python's `str()` semantics for floats, bools, thresholds
