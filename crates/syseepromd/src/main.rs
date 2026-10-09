@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! syseepromd, in Rust.  Ports `sonic-syseepromd/scripts/syseepromd`.
 //!
 //! The daemon is small because the work is not its own: the platform decodes
