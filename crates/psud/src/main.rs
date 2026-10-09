@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! psud, in Rust.  Ports `sonic-psud/scripts/psud`.
 //!
 //! PSU_INFO every three seconds, the PSU half of FAN_INFO, the PSU tray LEDs,

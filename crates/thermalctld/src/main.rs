@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! thermalctld, in Rust, reading hardware via a native platform crate.
 //!
 //! On Mellanox/NVIDIA: reads thermal and fan state directly from

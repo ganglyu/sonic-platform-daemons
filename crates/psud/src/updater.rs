@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! PSU_INFO, and the FAN_INFO rows that belong to a PSU rather than a drawer.
 //!
 //! Ports `psud:DaemonPsud._update_single_power_entity_data` and the four

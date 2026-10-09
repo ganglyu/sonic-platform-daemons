@@ -1,9 +1,3 @@
-//
-// SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
-// Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// Apache-2.0
-//
-
 //! Port of TemperatureStatus / TemperatureUpdater.
 //!
 //! Reads thermal data directly from `PlatformApi` (Mellanox: sysfs) instead
