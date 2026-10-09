@@ -11,8 +11,8 @@
 //! threshold past which a slow cycle is worth a warning -- and the same
 //! arithmetic between them (`thermalctld:ThermalMonitor.main`,
 //! `sensormond:SensorMonitorDaemon.run`, `psud`, `chassisd`).  It is four
-//! lines, and four lines copied seven times is how the seventh comes to differ
-//! from the first.
+//! lines, and four lines copied into every daemon is how the last copy comes
+//! to differ from the first.
 
 /// Seconds to wait after a cycle that took `elapsed`.
 ///

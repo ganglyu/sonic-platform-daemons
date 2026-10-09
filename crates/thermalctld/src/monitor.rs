@@ -87,6 +87,22 @@ impl Monitor {
         }
     }
 
+    /// The same monitor with its temperature updater supplied, so a test can
+    /// hand it one whose BMC mirror it can read back.
+    #[cfg(test)]
+    pub fn with_temperature_updater(mut self, updater: TemperatureUpdater) -> Self {
+        self.temperature_updater = updater;
+        self
+    }
+
+    /// Take the rows the temperature updater mirrored to the BMC back off it.
+    ///
+    /// For `main::run`'s shutdown, beside `StateDb::clear`: the mirror lives
+    /// in the updater, and the updater lives here.
+    pub fn clear_bmc_mirror(&mut self) {
+        self.temperature_updater.clear_mirror();
+    }
+
     /// Run the thermal monitoring loop.
     ///
     /// The first pass fires after the short `initial_interval` so STATE_DB is
