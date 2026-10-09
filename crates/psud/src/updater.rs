@@ -41,7 +41,6 @@ pub struct Tables<'a> {
     pub entity: &'a dyn TableLike,
 }
 
-#[derive(Default)]
 pub struct Updater {
     status: BTreeMap<String, PsuStatus>,
     /// True until a full pass has run.  Python spells this on the daemon and
@@ -52,9 +51,18 @@ pub struct Updater {
     published: BTreeSet<String>,
 }
 
+/// Hand-written because a derived `Default` would start with `first_run:
+/// false`, which is the one value of it nothing should ever begin from (as in
+/// `PowerBudget`).
+impl Default for Updater {
+    fn default() -> Self {
+        Self { status: BTreeMap::new(), first_run: true, published: BTreeSet::new() }
+    }
+}
+
 impl Updater {
     pub fn new() -> Self {
-        Self { first_run: true, ..Default::default() }
+        Self::default()
     }
 
     /// One pass over every PSU and PDB.
@@ -142,8 +150,6 @@ impl Updater {
                 status.check_power_threshold = false;
                 log::error!("{name} is not present.");
             }
-        } else if first_run && !present {
-            log::error!("{name} is not present.");
         }
 
         // A PSU that just came or went takes its fans with it, and the fan rows
@@ -311,6 +317,9 @@ impl Updater {
             ("max_power", fmt::opt_float(reading(row.maximum_supplied_power))),
             ("presence", fmt::lower_bool(present)),
             ("status", fmt::lower_bool(power_good)),
+            // The epoch float, unlike FAN_INFO's below: Python writes
+            // `str(datetime.now().timestamp())` here
+            // (`psud:DaemonPsud._update_single_power_entity_data`).
             ("timestamp", fmt::epoch_timestamp()),
         ];
         if let Err(e) = tables.psu.set(name, &fvs) {
@@ -386,6 +395,9 @@ fn publish_psu_fans(psu: &str, present: bool, fans: &[FanInfo], table: &dyn Tabl
                 },
             ),
             ("speed", if present { fmt::opt_u32(fan.speed_pct) } else { fmt::NOT_AVAILABLE.to_string() }),
+            // `%Y%m%d %H:%M:%S`, unlike PSU_INFO's epoch float: Python writes
+            // `datetime.now().strftime(...)` here
+            // (`psud:DaemonPsud._update_psu_fan_data`).
             ("timestamp", fmt::timestamp()),
         ];
         if let Err(e) = table.set(&fan.name, &fvs) {
@@ -526,6 +538,15 @@ mod tests {
         let leds = Updater::new().refresh(&[psu("PSU 1"), psu("PSU 2")], &[], &db.tables());
         assert_eq!(leds.len(), 2, "nothing has told the hardware a colour yet");
         assert!(leds.iter().all(|l| l.color == LedColor::Green));
+    }
+
+    /// `Default` is a first pass too, not only `new`: a derived one would
+    /// start with `first_run: false` and never light a healthy PSU's LED.
+    #[test]
+    fn a_default_updater_starts_on_its_first_pass() {
+        let db = Db::new();
+        let leds = Updater::default().refresh(&[psu("PSU 1")], &[], &db.tables());
+        assert_eq!(leds, vec![LedWrite { psu: "PSU 1".to_string(), color: LedColor::Green }]);
     }
 
     /// After that, only a change writes.  The LED is an i2c write; doing it
